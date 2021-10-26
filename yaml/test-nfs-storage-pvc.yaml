@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-nfs-storage-pvc
+  annotations:
+    pv.kubernetes.io/bound-by-controller: 'yes'
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Gi
+  volumeName: test-nfs-storage
+  volumeMode: Filesystem

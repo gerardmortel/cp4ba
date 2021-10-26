@@ -1,0 +1,16 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: test-nfs-storage
+  annotations:
+   pv.kubernetes.io/bound-by-controller: 'yes'
+spec:
+  capacity:
+    storage: 200Gi
+  nfs:
+    server: 10.22.1.53
+    path: /data/nfsshare
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  volumeMode: Filesystem

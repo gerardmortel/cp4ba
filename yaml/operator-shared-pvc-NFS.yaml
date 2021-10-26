@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: operator-shared-pvc
+  namespace: <CP4BANAMESPACE>
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: operator-shared-pv
+  volumeMode: Filesystem

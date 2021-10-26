@@ -1,0 +1,20 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: regions
+  uid: 019aa281-f04a-4484-8708-cdf2a346e7df
+  resourceVersion: '8952703'
+  creationTimestamp: '2021-10-01T14:17:11Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: storage.k8s.io/v1
+      time: '2021-08-30T18:07:06Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:provisioner': {}
+        'f:reclaimPolicy': {}
+        'f:volumeBindingMode': {}
+provisioner: kubernetes.io/no-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer

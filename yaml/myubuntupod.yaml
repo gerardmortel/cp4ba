@@ -1,0 +1,122 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sysctl-example
+  namespace: cp4ba
+  selfLink: /api/v1/namespaces/cp4ba/pods/sysctl-example
+  uid: 8ef6cc97-82de-4305-a50c-d0d21ac6009a
+  resourceVersion: '25368361'
+  creationTimestamp: '2021-08-16T19:26:56Z'
+  annotations:
+    openshift.io/scc: ibm-privileged-scc
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2021-08-16T19:26:56Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:containers':
+            'k:{"name":"myubuntupod"}':
+              .: {}
+              'f:command': {}
+              'f:image': {}
+              'f:imagePullPolicy': {}
+              'f:name': {}
+              'f:resources':
+                .: {}
+                'f:limits':
+                  .: {}
+                  'f:cpu': {}
+                  'f:memory': {}
+                'f:requests':
+                  .: {}
+                  'f:cpu': {}
+                  'f:memory': {}
+              'f:terminationMessagePath': {}
+              'f:terminationMessagePolicy': {}
+          'f:dnsPolicy': {}
+          'f:enableServiceLinks': {}
+          'f:restartPolicy': {}
+          'f:schedulerName': {}
+          'f:securityContext':
+            .: {}
+            'f:sysctls': {}
+          'f:terminationGracePeriodSeconds': {}
+    - manager: kubelet
+      operation: Update
+      apiVersion: v1
+      time: '2021-08-16T19:26:57Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:message': {}
+          'f:phase': {}
+          'f:reason': {}
+          'f:startTime': {}
+spec:
+  restartPolicy: Always
+  serviceAccountName: default
+  imagePullSecrets:
+    - name: default-dockercfg-kcr99
+  priority: 0
+  schedulerName: default-scheduler
+  enableServiceLinks: true
+  terminationGracePeriodSeconds: 30
+  preemptionPolicy: PreemptLowerPriority
+  nodeName: 10.209.82.122
+  securityContext:
+    sysctls:
+      - name: kernel.shm_rmid_forced
+        value: '0'
+      - name: net.core.somaxconn
+        value: '1024'
+      - name: kernel.msgmax
+        value: '65536'
+  containers:
+    - resources:
+        limits:
+          cpu: '1'
+          memory: 1000Mi
+        requests:
+          cpu: 500m
+          memory: 500Mi
+      terminationMessagePath: /dev/termination-log
+      name: myubuntupod
+      command:
+        - /bin/sleep
+        - 3650d
+      securityContext:
+        allowPrivilegeEscalation: true
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - name: default-token-7nhhv
+          readOnly: true
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      terminationMessagePolicy: File
+      image: 'ubuntu:latest'
+  serviceAccount: default
+  volumes:
+    - name: default-token-7nhhv
+      secret:
+        secretName: default-token-7nhhv
+        defaultMode: 420
+  dnsPolicy: ClusterFirst
+  tolerations:
+    - key: node.kubernetes.io/not-ready
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/unreachable
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/memory-pressure
+      operator: Exists
+      effect: NoSchedule
+status:
+  phase: Failed
+  message: 'Pod forbidden sysctl: "net.core.somaxconn" not whitelisted'
+  reason: SysctlForbidden
+  startTime: '2021-08-16T19:26:57Z'

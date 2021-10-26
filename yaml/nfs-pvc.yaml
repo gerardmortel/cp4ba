@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nfs1-pvc
+  namespace: cp4ba
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi
+  nfs:
+    server: api.bts6.cp.fyre.ibm.com
+    path: "/data/nfsshare"
