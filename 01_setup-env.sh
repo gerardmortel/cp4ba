@@ -14,18 +14,8 @@
 
 ### OpenShift Cluster info
 export CLUSTER_USER="kubeadmin"
-# export CLUSTER_USER="cluster-admin"
-# export CLUSTER_USER="ocpadmin"
-# export CLUSTER_PASS="N2fka-2haDR-dUzmy-pPani" # ROSA EFS
-# export CLUSTER_URL="https://api.rosa-efs-test.zxkp.p1.openshiftapps.com:6443" # ROSA EFS
-# export CLUSTER_PASS="7kNcJ-op4Fk-iPRMN-L4AGu" # Env 46
-# export CLUSTER_URL="https://api.bts46.cp.fyre.ibm.com:6443" # Env 46
-export CLUSTER_PASS="UaCDV-TTC3G-JXoAW-6qqb9" # Env 50
+export CLUSTER_PASS="xxx" # Env 50
 export CLUSTER_URL="https://api.bts50.cp.fyre.ibm.com:6443" # Env 50
-# export CLUSTER_PASS="CDFR8-FWFz8-roXVI-NrFbj" # Env 52
-# export CLUSTER_URL="https://api.bts52.cp.fyre.ibm.com:6443" # Env 52
-# export CLUSTER_PASS="h67Zu-yZmYX-mTxxU-mvWxr" # Env 53
-# export CLUSTER_URL="https://api.bts53.cp.fyre.ibm.com:6443" # Env 53
 
 ### Log in to the OCP cluster as a cluster administrator.
 oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
@@ -82,7 +72,7 @@ export NONCLUSTERADMINUSER="cpadmin"
 
 ### Create LDAP bind info secret
 export LDAP_BIND_USERNAME="CN=CEAdmin,OU=Shared,OU=Engineering,OU=FileNet,DC=dockerdom,DC=ecm,DC=ibm,DC=com"
-export LDAP_BIND_PASSWORD="Genius1"
+export LDAP_BIND_PASSWORD="xxx"
 # export LDAP_BIND_USERNAME="uid=bluadmin,ou=People,dc=blustratus,dc=com"
 # export LDAP_BIND_PASSWORD="v08kvRurchWGNNh"
 # export LDAP_BIND_USERNAME="cn=bluldap,dc=blustratus,dc=com"
@@ -156,7 +146,7 @@ export GCDDBPASSWORD="cicdtest"
 export OSDBUSERNAME="db2inst1"
 export OSDBPASSWORD="cicdtest"
 export APPLOGINUSERNAME="CEAdmin"
-export APPLOGINPASSWORD="Genius1"
+export APPLOGINPASSWORD="xxx"
 export FNCMKEYSTOREPASSWORD="filenet"
 export FNCMLTPAPASSWORD="filenet"
 
@@ -183,9 +173,9 @@ export NAVIGATORDBPASSWORD="cicdtest"
 export NAVIGATORKEYSTOREPASSWORD="filenet"
 export NAVIGATORLTPAPASSWORD="filent"
 export NAVIGATORAPPLOGINUSERNAME="CEAdmin"
-export NAVIGATORAPPLOGINPASSWORD="Genius1"
+export NAVIGATORAPPLOGINPASSWORD="xxx"
 export NAVIGATORJMAILUSERNAME="CEAdmin"
-export NAVIGATORJMAILPASSWORD="Genius1"
+export NAVIGATORJMAILPASSWORD="xxx"
 
 ### Create volumes and folders
 
@@ -259,13 +249,13 @@ export ADSENCRYPTIONKEY="TA8RolnfPEEt15frxh4sW2H7oWP507LaFwvZLfpRm2TO0v3I4DBLSKP
 
 #### ADP
 export ADPSERVICEUSER="CN=CEAdmin,OU=Shared,OU=Engineering,OU=FileNet,DC=dockerdom,DC=ecm,DC=ibm,DC=com"
-export ADPSERVICEPASSWORD="Genius1"
+export ADPSERVICEPASSWORD="xxx"
 export ADPSERVICEUSERBAS="CN=CEAdmin,OU=Shared,OU=Engineering,OU=FileNet,DC=dockerdom,DC=ecm,DC=ibm,DC=com"
-export ADPSERVICEPASSWORDBAS="Genius1"
+export ADPSERVICEPASSWORDBAS="xxx"
 export ADPSERVICEUSERCA="CN=CEAdmin,OU=Shared,OU=Engineering,OU=FileNet,DC=dockerdom,DC=ecm,DC=ibm,DC=com"
-export ADPSERVICEPASSWORDCA="Genius1"
+export ADPSERVICEPASSWORDCA="xxx"
 export ADPENVOWNERUSER="CN=CEAdmin,OU=Shared,OU=Engineering,OU=FileNet,DC=dockerdom,DC=ecm,DC=ibm,DC=com"
-export ADPENVOWNERPASSWORD="Genius1"
+export ADPENVOWNERPASSWORD="xxx"
 
 export BASE_DB_USER="db2inst1"
 export BASE_DB_PWD="cicdtest"
@@ -319,5 +309,5 @@ export ODMDBPASSWORD="cicdtest"
 
 ### Create a secret to access the IBM container registry
 ### Get entitlement key from https://myibm.ibm.com/products-services/containerlibrary
-export API_KEY_GENERATED="eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJJQk0gTWFya2V0cGxhY2UiLCJpYXQiOjE1NzQ0NDU1MTQsImp0aSI6IjY1NTRhMWE0MmI5ZjRmNmNhZDg5MzI5ZmQzNzY3NWI5In0.CQjQmwyYOnRBTgJLCPWW9pAq5L3Z_Bk4kB_yDjNhWwA"
-export USER_EMAIL="gmortel@us.ibm.com"
+export API_KEY_GENERATED="xxx"
+export USER_EMAIL="xxx"
