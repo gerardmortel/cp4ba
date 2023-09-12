@@ -1,5 +1,5 @@
 # Install IBM Cloud Pak for Business Automation on OpenShift on Fyre
-# https://github.ibm.com/gmortel/cp4ba
+# https://github.com/gerardmortel/cp4ba
 
 # Resources used to create this
 IBM Cloud Pak for Business Automation 23.0.1 Knowledge Center
