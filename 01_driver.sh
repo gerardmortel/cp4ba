@@ -1,4 +1,6 @@
 #!/bin/bash
+
+echo "#### Running the driver file"
 . ./02_setup_env.sh
 ./03_htpasswd_config.sh
 ./04_download_extract_case_file.sh

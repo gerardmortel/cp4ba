@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "#### Set up the environment variables"
 ### Get entitlement key from https://myibm.ibm.com/products-services/containerlibrary
 export API_KEY_GENERATED=""
 export USER_EMAIL=""
