@@ -15,9 +15,13 @@ https://github.com/IBM/cloud-pak-cli
 The purpose of this repo is to install the IBM Cloud Pak for Business Automation (CP4BA) on OpenShift on Fyre on OpenShift on Fyre.
 
 # Prerequisites
-1. OpenShift cluster on Fyre
+1. OpenShift 4.10+ cluster on Fyre
 2. NFS Storage configured https://github.com/gerardmortel/nfs-storage-for-fyre
 3. Entitlement key https://myibm.ibm.com/products-services/containerlibrary
+4. kubectl 1.21+
+5. ocp cli
+6. podman
+7. CASE files (this script will download it)
 
 # Instructions
 1. ssh into the infrastructure node as root (e.g. ssh root@api.slavers.cp.fyre.ibm.com)
