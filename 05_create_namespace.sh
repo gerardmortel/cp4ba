@@ -1,2 +1,2 @@
 #!/bin/bash
-oc create namespace ${CP4BANAMESPACE}
+oc new-project ${CP4BANAMESPACE}
