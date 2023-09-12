@@ -4,3 +4,4 @@
 ./04_download_extract_case_file.sh
 ./05_create_project.sh
 ./06_ibm_entitlement_key_secret.sh
+./07_configure_cluster_by_script.sh

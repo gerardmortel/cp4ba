@@ -1,7 +1,5 @@
 #!/bin/bash
-oc project ${CP4BANAMESPACE}
 
-### For OCS Storage
 # Download the CASE (Container Application Software for Enterprises) package
 #curl -L https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-cp-automation/5.0.0/ibm-cp-automation-5.0.0.tgz -o ibm-cp-automation-5.0.0.tgz
 curl -L https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-cp-automation/5.0.2/ibm-cp-automation-5.0.2.tgz -o ibm-cp-automation-5.0.2.tgz
