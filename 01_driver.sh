@@ -7,3 +7,5 @@ echo "#### Running the driver file"
 ./05_create_project.sh
 ./06_ibm_entitlement_key_secret.sh
 ./07_configure_cluster_by_script.sh
+./08_generate_property_files.sh
+./09_edit_property_files.sh
