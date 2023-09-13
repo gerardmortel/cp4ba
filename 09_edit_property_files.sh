@@ -27,7 +27,7 @@ cp cp4ba_db_server.property.5 cp4ba_db_server.property
 echo "#### Edit cp4ba_LDAP.property"
 cp -p cp4ba_LDAP.property cp4ba_LDAP.property.orig
 sed -r "s/LDAP_SERVER=\"<Required>\"/LDAP_SERVER=\"${LDAP_SERVER}\"/g" cp4ba_LDAP.property > cp4ba_LDAP.property.1
-sed -r "s/LDAP_PORT=\"<Required>\"/LDAP_PORT=\"${LDAP_PORT}\"|g" cp4ba_LDAP.property.1 > cp4ba_LDAP.property.2
+sed -r "s/LDAP_PORT=\"<Required>\"/LDAP_PORT=\"${LDAP_PORT}\"/g" cp4ba_LDAP.property.1 > cp4ba_LDAP.property.2
 sed -r "s/LDAP_BASE_DN=\"<Required>\"/LDAP_BASE_DN=\"${LDAP_BASE_DN}\"/g" cp4ba_LDAP.property.2 > cp4ba_LDAP.property.3
 sed -r "s/LDAP_BIND_DN=\"<Required>\"/LDAP_BIND_DN=\"${LDAP_BIND_DN}\"/g" cp4ba_LDAP.property.3 > cp4ba_LDAP.property.4
 sed -r "s/LDAP_BIND_DN_PASSWORD=\"<Required>\"/LDAP_BIND_DN_PASSWORD=\"${LDAP_BIND_DN_PASSWORD}\"/g" cp4ba_LDAP.property.4 > cp4ba_LDAP.property.5
@@ -45,3 +45,28 @@ sed -r 's|LC_GROUP_FILTER="<Required>"|LC_GROUP_FILTER="(\&(cn=%v)(objectclass=g
 echo "#### Copy last file to first file"
 rm -f cp4ba_LDAP.property
 cp cp4ba_LDAP.property.15 cp4ba_LDAP.property
+
+echo "#### Edit cp4ba_user_profile.property"
+cp -p cp4ba_user_profile.property cp4ba_user_profile.property.orig
+#CP4BA.CP4BA_LICENSE="<Required>"
+sed -r "s/(CP4BA\.CP4BA_LICENSE=)\"<Required>\"/\1\"non-production\"/g" cp4ba_user_profile.property > cp4ba_user_profile.property.1
+
+####################################################
+##              USER Property for BAN             ##
+####################################################
+## Provide the user name for BAN. For example: "BANAdmin"
+sed -r "s/BAN\.APPLOGIN_USER=\"<Required>\"/BAN\.APPLOGIN_USER=\"${P8ADMINUSER}\"/g" cp4ba_user_profile.property.1 > cp4ba_user_profile.property.2
+## Provide the user password for BAN.
+sed -r "s/BAN\.APPLOGIN_PASSWORD=\"<Required>\"/BAN\.APPLOGIN_PASSWORD=\"${P8ADMINPASSWORD}\"/g" cp4ba_user_profile.property.2 > cp4ba_user_profile.property.3
+## Provide LTPA key password for BAN deployment.
+sed -r "s/BAN\.LTPA_PASSWORD=\"<Required>\"/BAN\.LTPA_PASSWORD=\"${BANLTPAPASSWORD}\"/g" cp4ba_user_profile.property.3 > cp4ba_user_profile.property.4
+## Provide keystore password for BAN deployment.
+sed -r "s/BAN\.KEYSTORE_PASSWORD=\"<Required>\"/BAN\.KEYSTORE_PASSWORD=\"${BANKEYSTOREPASSWORD}\"/g" cp4ba_user_profile.property.4 > cp4ba_user_profile.property.5
+## Provide the user name for jMail used by BAN. For example: "jMailAdmin"
+sed -r "s/BAN\.JMAIL_USER_NAME=\"<Optional>\"/BAN\.JMAIL_USER_NAME=\"${BANJMAILUSERNAME}\"/g" cp4ba_user_profile.property.5 > cp4ba_user_profile.property.6
+## Provide the user password for jMail used by BAN.
+sed -r "s/BAN\.JMAIL_USER_PASSWORD=\"<Optional>\"/BAN\.JMAIL_USER_PASSWORD=\"${BANJMAILPASSWORD}\"/g" cp4ba_user_profile.property.6 > cp4ba_user_profile.property.7
+
+# Copy last file to first file
+rm -f cp4ba_user_profile.property
+cp cp4ba_user_profile.property.7 cp4ba_user_profile.property

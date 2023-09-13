@@ -26,6 +26,12 @@ export LDAP_BASE_DN=""
 export LDAP_BIND_DN=""
 export LDAP_BIND_DN_PASSWORD=""
 export LDAP_SSL_ENABLED=""
+export P8ADMINUSER=""
+export P8ADMINPASSWORD=""
+export BANLTPAPASSWORD=""     # Make the same as BANKEYSTOREPASSWORD
+export BANKEYSTOREPASSWORD="" # Make the same as BANLTPAPASSWORD
+export BANJMAILUSERNAME=""
+export BANJMAILPASSWORD=""
 
 # Log in to the OCP cluster as a cluster administrator.
 oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
