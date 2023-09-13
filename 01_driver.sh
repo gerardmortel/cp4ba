@@ -9,3 +9,5 @@ echo "#### Running the driver file"
 ./07_configure_cluster_by_script.sh
 ./08_generate_property_files.sh
 ./09_edit_property_files.sh
+./10_generate_property_files.sh
+./11_create_secrets.sh
