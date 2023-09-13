@@ -31,5 +31,5 @@ spec:
 EOF
 
 #echo "#### Verify that it worked. It might take a few minutes for the update to complete."
-# oc logout
-# oc login ${CLUSTER_URL} --username=${HTPASSWDUSERNAME} --password=${HTPASSWDPASSWORD}
+oc logout
+oc login ${CLUSTER_URL} --username=${HTPASSWDUSERNAME} --password=${HTPASSWDPASSWORD}
