@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "#### Configure the cluster by script"
+
 echo "#### Logout as user and in as cluster admin"
 oc logout
 oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
