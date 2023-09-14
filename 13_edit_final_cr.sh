@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "#### Edit the final CR"
-cd /root/cp4ba-23.0.1/ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts/generated-cr
+cd ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts/generated-cr
 cp -p ibm_cp4a_cr_final.yaml ibm_cp4a_cr_final.yaml.orig
 
 #sed -ri "s|sc_run_as_user:|sc_run_as_user: 1000670000|" ibm_cp4a_cr_final.yaml
