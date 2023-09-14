@@ -21,7 +21,6 @@ The purpose of this repo is to install the IBM Cloud Pak for Business Automation
 4. kubectl 1.21+
 5. ocp cli
 6. podman
-7. CASE files (this script will download it)
 
 # Instructions
 1. ssh into the infrastructure node as root (e.g. ssh root@api.slavers.cp.fyre.ibm.com)
