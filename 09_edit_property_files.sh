@@ -67,6 +67,6 @@ sed -r "s/BAN\.JMAIL_USER_NAME=\"<Optional>\"/BAN\.JMAIL_USER_NAME=\"${BANJMAILU
 ## Provide the user password for jMail used by BAN.
 sed -r "s/BAN\.JMAIL_USER_PASSWORD=\"<Optional>\"/BAN\.JMAIL_USER_PASSWORD=\"${BANJMAILPASSWORD}\"/g" cp4ba_user_profile.property.6 > cp4ba_user_profile.property.7
 
-# Copy last file to first file
+echo "#### Copy last file to first file"
 rm -f cp4ba_user_profile.property
 cp cp4ba_user_profile.property.7 cp4ba_user_profile.property
