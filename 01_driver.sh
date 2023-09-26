@@ -13,4 +13,4 @@ echo "#### Running the driver file"
 ./11_create_secrets.sh
 ./12_generate_final_cr.sh
 ./13_edit_final_cr.sh
-./14_apply_cr.sh
+#./14_apply_cr.sh
