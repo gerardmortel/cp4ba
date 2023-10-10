@@ -23,7 +23,7 @@ do
     break
   else
     echo "#### db2ucluster is NOT available."
-    echo "##### Sleeping for 10 seconds"
+    echo "#### Sleeping for 10 seconds"
     sleep 10
   fi
 done
