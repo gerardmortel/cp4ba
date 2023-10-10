@@ -1,4 +1,14 @@
 #!/bin/bash
+
+# Operator installation or upgrade fails with DeadlineExceeded error
+# https://www.ibm.com/docs/en/cloud-paks/foundational-services/4.2?topic=issues-operator-installation-upgrade-fails-deadlineexceeded-error
+oc get jobs -n openshift-marketplace | grep -v NAME | awk '{print $1}' > jobs.txt
+cat jobs.txt | awk '{print $1}' | xargs oc delete job -n openshift-marketplace
+cat jobs.txt | awk '{print $1}' | xargs oc delete cm -n openshift-marketplace
+oc get installplan -n ibm-cert-manager | grep -v NAME | awk '{print $1}' | xargs oc delete installplan -n ibm-cert-manager
+oc get subscription -n ibm-cert-manager | grep -v NAME | awk '{print $1}' | xargs oc delete subscription -n ibm-cert-manager
+oc get csv -n ibm-cert-manager | grep -v NAME | awk '{print $1}' | xargs oc delete csv
+
 # From https://www.ibm.com/docs/en/cloud-paks/1.0?topic=online-uninstalling-foundational-services
 oc -n kube-system delete secret icp-metering-api-secret
 oc -n kube-public delete configmap ibmcloud-cluster-info
@@ -7,8 +17,6 @@ oc delete ValidatingWebhookConfiguration cert-manager-webhook ibm-cs-ns-mapping-
 oc delete MutatingWebhookConfiguration cert-manager-webhook ibm-common-service-webhook-configuration ibm-operandrequest-webhook-configuration namespace-admission-config --ignore-not-found
 oc delete namespace services
 oc delete nss --all
-
-#
 
 # cp4ba
 oc get subscription -n cp4ba
