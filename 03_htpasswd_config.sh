@@ -30,6 +30,19 @@ spec:
        name: htpass-secret
 EOF
 
-#echo "#### Verify that it worked. It might take a few minutes for the update to complete."
+echo "#### Verify logging in with ${HTPASSWDUSERNAME} works. It might take a few minutes for the update to complete."
+echo "#### Logout of OCP cluster"
 oc logout
-oc login ${CLUSTER_URL} --username=${HTPASSWDUSERNAME} --password=${HTPASSWDPASSWORD}
+
+while [ true ]
+do
+  oc login ${CLUSTER_URL} --username=${HTPASSWDUSERNAME} --password=${HTPASSWDPASSWORD}
+  if [ $? -eq 0 ]; then
+    echo "#### Login with ${HTPASSWDUSERNAME} SUCCEEDED."
+    break
+  else
+    echo "#### Login with ${HTPASSWDUSERNAME} FAILED."
+    echo "#### Sleeping for 10 seconds"
+    sleep 10
+  fi
+done
