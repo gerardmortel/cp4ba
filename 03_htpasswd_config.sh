@@ -46,3 +46,9 @@ do
     sleep 10
   fi
 done
+
+echo "#### Logout as user ${HTPASSWDUSERNAME}"
+oc logout
+
+echo "#### Login as ${CLUSTER_USER}"
+oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
