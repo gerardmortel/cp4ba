@@ -10,6 +10,9 @@ oc project ${CP4BANAMESPACE}
 echo "#### Copy yq to /usr/local/bin"
 cp -f ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts/helper/yq/yq_linux_amd64 /usr/local/bin/yq
 
+echo "#### Change to the cert-kubernetes/scripts directory"
+cd ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts
+
 if [ ${IS_FIRST_CLOUDPAK_IN_CLUSTER} == "false"  ]; then
   echo "#### This is not the first cloudpak in the cluster. The response needs an extra Yes to confirm installation"
   #### cp4ba1 namespace
