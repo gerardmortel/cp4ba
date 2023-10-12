@@ -33,4 +33,4 @@ The purpose of this repo is to install the IBM Cloud Pak for Business Automation
 8. rm -f 23.0.1.zip
 9. cd cp4ba-23.0.1
 10. STOP! Put your values for ALL VARIABLES inside file 02_setup_env.sh
-11. ./01_driver.sh
+11. ./01_driver.sh | tee install_cp4ba.log
