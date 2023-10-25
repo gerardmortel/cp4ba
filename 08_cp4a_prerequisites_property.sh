@@ -10,10 +10,10 @@ cd ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/
 3
 
 2
-nfs-managed-storage
-nfs-managed-storage
-nfs-managed-storage
-nfs-managed-storage
+${STORAGECLASS}
+${STORAGECLASS}
+${STORAGECLASS}
+${STORAGECLASS}
 1
 dbserver1
 END
