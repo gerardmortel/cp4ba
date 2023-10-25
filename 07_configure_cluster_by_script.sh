@@ -7,8 +7,8 @@ oc logout
 oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
 oc project ${CP4BANAMESPACE}
 
-echo "#### Copy yq to /usr/local/bin"
-cp -f ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts/helper/yq/yq_linux_amd64 /usr/local/bin/yq
+echo "#### Copy yq to ${HOME}/bin"
+cp -f ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts/helper/yq/yq_linux_amd64 ${HOME}/bin/yq
 
 echo "#### Change to the cert-kubernetes/scripts directory"
 cd ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts
