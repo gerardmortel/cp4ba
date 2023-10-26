@@ -37,8 +37,14 @@ oc get pod|grep ibm-cp4a-operator | awk '{print $1}' | xargs oc delete pod
 
 echo "#### Wait 10 seconds for the operator to start then tail the stdout log"
 sleep 10
+
+echo "#### Get cp4ba operator pod full name"
 pod=`(oc get pods | grep -v NAME | grep ibm-cp4a-operator | awk '{print $1}')`
+
+echo "#### exec into cp4ba operator pod"
 exec -it ${pod} -- bash
+
+echo "#### Get close the directory to tail on the stdout"
 cd /tmp/ansible-operator/runner/icp4a.ibm.com/v1/ICP4ACluster/cp4ba/icp4adeploy/artifacts
 
 # directory=`(oc exec -it ${pod} -c operator -- ls -1 /tmp/ansible-operator/runner/icp4a.ibm.com/v1/ICP4ACluster/cp4ba/icp4adeploy/artifacts)`
