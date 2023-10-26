@@ -34,3 +34,14 @@ oc apply -f ibm_cp4a_cr_final.yaml
 
 echo "#### Restart CP4A Operator"
 oc get pod|grep ibm-cp4a-operator | awk '{print $1}' | xargs oc delete pod
+
+echo "#### Wait 10 seconds for the operator to start then tail the stdout log"
+sleep 10
+pod=`(oc get pods | grep -v NAME | grep ibm-cp4a-operator | awk '{print $1}')`
+exec -it ${pod} -- bash
+cd /tmp/ansible-operator/runner/icp4a.ibm.com/v1/ICP4ACluster/cp4ba/icp4adeploy/artifacts
+
+# directory=`(oc exec -it ${pod} -c operator -- ls -1 /tmp/ansible-operator/runner/icp4a.ibm.com/v1/ICP4ACluster/cp4ba/icp4adeploy/artifacts)`
+# file="/tmp/ansible-operator/runner/icp4a.ibm.com/v1/ICP4ACluster/cp4ba/icp4adeploy/artifacts/"${directory}"/stdout"
+# oc exec -it ${pod} -c operator -- tail -f ${file}
+# oc exec -it ${pod} -c operator -- ls -1 /tmp/ansible-operator/runner/icp4a.ibm.com/v1/ICP4ACluster/cp4ba/icp4adeploy/artifacts
