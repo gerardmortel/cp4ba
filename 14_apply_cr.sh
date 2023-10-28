@@ -42,7 +42,7 @@ echo "#### Get cp4ba operator pod full name"
 pod=`(oc get pods | grep -v NAME | grep ibm-cp4a-operator | awk '{print $1}')`
 
 echo "#### exec into cp4ba operator pod"
-exec -it ${pod} -- bash
+oc exec -it ${pod} -- bash
 
 echo "#### Get close the directory to tail on the stdout"
 cd /tmp/ansible-operator/runner/icp4a.ibm.com/v1/ICP4ACluster/cp4ba/icp4adeploy/artifacts
