@@ -30,7 +30,6 @@ export BANKEYSTOREPASSWORD="" # Make the same as BANLTPAPASSWORD
 export BANJMAILUSERNAME=""
 export BANJMAILPASSWORD=""
 export CLOUDPLATFORMTYPE="" # ROKS, OCP or Other (case sensitive)
-export STORAGECLASS=""
 
 # Log in to the OCP cluster as a cluster administrator.
 oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
