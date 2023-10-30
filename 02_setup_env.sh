@@ -1,17 +1,21 @@
 #!/bin/bash
 
 echo "#### Set up the environment variables"
-### Get entitlement key from https://myibm.ibm.com/products-services/containerlibrary
-export API_KEY_GENERATED=""
-export USER_EMAIL=""
-export HTPASSWDUSERNAME=""
-export HTPASSWDPASSWORD=""
-export CP4BANAMESPACE=""
-export IS_FIRST_CLOUDPAK_IN_CLUSTER="" # true or false
+# Higher priority variables
+export CLUSTER_URL=""
 export CLUSTER_USER=""
 export CLUSTER_PASS=""
-export CLUSTER_URL=""
 export STORAGECLASS=""
+export CLOUDPLATFORMTYPE="" # ROKS, OCP or Other (case sensitive) - For Techzone set to ROKS
+export IS_FIRST_CLOUDPAK_IN_CLUSTER="" # true or false
+export CP4BANAMESPACE=""
+### Get entitlement key from https://myibm.ibm.com/products-services/containerlibrary
+export API_KEY_GENERATED=""
+
+# Lower priority variables
+export USER_EMAIL="" # docker email addresses
+export HTPASSWDUSERNAME=""
+export HTPASSWDPASSWORD=""
 export DB_USERNAME=""
 export DB_PASSWORD=""
 export DB_SERVER=""
@@ -29,7 +33,6 @@ export BANLTPAPASSWORD=""     # Make the same as BANKEYSTOREPASSWORD
 export BANKEYSTOREPASSWORD="" # Make the same as BANLTPAPASSWORD
 export BANJMAILUSERNAME=""
 export BANJMAILPASSWORD=""
-export CLOUDPLATFORMTYPE="" # ROKS, OCP or Other (case sensitive)
 
 # Log in to the OCP cluster as a cluster administrator.
 oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
