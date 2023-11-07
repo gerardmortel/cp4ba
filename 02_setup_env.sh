@@ -6,6 +6,7 @@ export CLUSTER_URL=""
 export CLUSTER_USER=""
 export CLUSTER_PASS=""
 export STORAGECLASS=""
+export BLOCKSTORAGECLASS=""
 export CLOUDPLATFORMTYPE="" # ROKS, OCP or Other (case sensitive) - For Techzone set to ROKS
 export IS_FIRST_CLOUDPAK_IN_CLUSTER="" # true or false
 export CP4BANAMESPACE=""

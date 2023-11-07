@@ -13,7 +13,7 @@ cd ibm-cp-automation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/
 ${STORAGECLASS}
 ${STORAGECLASS}
 ${STORAGECLASS}
-${STORAGECLASS}
+${BLOCKSTORAGECLASS}
 1
 dbserver1
 END
