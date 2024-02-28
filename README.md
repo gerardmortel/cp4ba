@@ -24,7 +24,7 @@ The purpose of this repo is to install the IBM Cloud Pak for Business Automation
 
 # Instructions
 1. ssh into the infrastructure node as root (e.g. ssh root@api.slavers.cp.fyre.ibm.com)
-2. dnf install -y git unzip
+2. yum install -y git unzip podman
 3. cd
 4. rm -rf cp4ba-23.0.2
 5. rm -f 23.0.2.zip
