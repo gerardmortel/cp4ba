@@ -34,6 +34,7 @@ export BANLTPAPASSWORD=""     # Make the same as BANKEYSTOREPASSWORD
 export BANKEYSTOREPASSWORD="" # Make the same as BANLTPAPASSWORD
 export BANJMAILUSERNAME=""
 export BANJMAILPASSWORD=""
+export CP4BA_LICENSE="" # non-production or production
 
 # Log in to the OCP cluster as a cluster administrator.
 oc login ${CLUSTER_URL} --username=${CLUSTER_USER} --password=${CLUSTER_PASS}
